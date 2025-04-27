@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
+type ThreadUnsafeSet[T comparable] threadUnsafeSet[T]
 package mapset
 
 import (
@@ -34,7 +34,8 @@ import (
 type threadUnsafeSet[T comparable] map[T]struct{}
 
 // threadUnsafeSet is the same as threadUnsafeSet, but exported.
-type ThreadUnsafeSet = threadUnsafeSet
+type ThreadUnsafeSet[T comparable] = threadUnsafeSet[T]
+//type ThreadUnsafeSet[T comparable] threadUnsafeSet[T]
 
 // Assert concrete type:threadUnsafeSet adheres to Set interface.
 var _ Set[string] = (*threadUnsafeSet[string])(nil)
