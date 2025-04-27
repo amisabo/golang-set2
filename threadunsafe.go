@@ -33,6 +33,9 @@ import (
 
 type threadUnsafeSet[T comparable] map[T]struct{}
 
+// threadUnsafeSet is the same as threadUnsafeSet, but exported.
+type ThreadUnsafeSet = threadUnsafeSet
+
 // Assert concrete type:threadUnsafeSet adheres to Set interface.
 var _ Set[string] = (*threadUnsafeSet[string])(nil)
 
